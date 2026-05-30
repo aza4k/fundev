@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{ post.title }} — fundev Journal</title>
+  <meta name="description" content="{{ post.excerpt }}"/>
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ post.title }} — fundev Journal"/>
+  <meta property="og:description" content="{{ post.excerpt }}"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="{{ request.build_absolute_uri }}"/>
+  {% if post.thumbnail %}
+  <meta property="og:image" content="{{ post.thumbnail.url }}"/>
+  {% else %}
+  <meta property="og:image" content="{% static 'images/logo-og.png' %}"/>
+  {% endif %}
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="{% static 'style.css' %}?v=3.0"/>
+  <style>
+    body { overflow-y: auto; cursor: auto !important; }
+    .nav { position: sticky; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); }
+    .post-detail-body { max-width: 800px; margin: 120px auto 80px; padding: 0 24px; }
+    .post-header { margin-bottom: 48px; }
+    .post-date { font-family: var(--mono); font-size: 0.8rem; color: var(--accent); margin-bottom: 12px; display: block; }
+    .post-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 24px; }
+    .post-subtitle { font-size: 1.25rem; color: var(--white-60); line-height: 1.5; margin-bottom: 32px; }
+    .post-thumbnail { width: 100%; border-radius: 24px; margin-bottom: 48px; overflow: hidden; }
+    .post-thumbnail img { width: 100%; height: auto; display: block; }
+    .post-content { font-size: 1.1rem; line-height: 1.8; color: var(--white-60); }
+    .post-content p { margin-bottom: 24px; }
+    .post-content h2, .post-content h3 { color: var(--white); margin: 48px 0 24px; }
+    .back-link { display: inline-flex; align-items: center; gap: 10px; color: var(--white); text-decoration: none; font-weight: 600; margin-bottom: 48px; transition: color 0.3s; }
+    .back-link:hover { color: var(--accent); }
+    .back-link svg { width: 20px; height: 20px; transform: rotate(180deg); }
+    .footer { position: relative; margin-top: 120px; left: 0; right: 0; padding: 40px 24px; border-top: 1px solid var(--border); }
+    
+    /* Overrides for detail page */
+    .section-dots, .nav-dot-track { display: none; }
+    .nav-link { pointer-events: auto !important; }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+
+  <nav class="nav">
+    <a href="{% url 'index' %}" class="nav-logo">fundev</a>
+    <div class="nav-links">
+      <a href="{% url 'index' %}" class="nav-link">Back to Home</a>
+    </div>
+  </nav>
+
+  <main class="post-detail-body">
+    <a href="{% url 'index' %}" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+      <span>Back to journal</span>
+    </a>
+
+    <header class="post-header">
+      <span class="post-date">{{ post.created_at|date:"F d, Y" }}</span>
+      <h1 class="post-title">{{ post.title }}</h1>
+      {% if post.subtitle %}
+        <p class="post-subtitle">{{ post.subtitle }}</p>
+      {% endif %}
+    </header>
+
+    {% if post.thumbnail %}
+    <div class="post-thumbnail">
+      <img src="{{ post.thumbnail.url }}" alt="{{ post.title }}">
+    </div>
+    {% endif %}
+
+    <article class="post-content">
+      {{ post.content|linebreaks }}
+    </article>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 fundev</span>
+    <span>Premium Software Engineering Team</span>
+  </footer>
+
+  <script>
+    // Minimal cursor script for detail page
+    (function() {
+      const cursor = document.getElementById('cursor');
+      let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+      let cx = mx, cy = my;
+      document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+      (function loop() {
+        cx += (mx - cx) * 0.18;
+        cy += (my - cy) * 0.18;
+        cursor.style.left = cx + 'px';
+        cursor.style.top = cy + 'px';
+        requestAnimationFrame(loop);
+      })();
+    })();
+  </script>
+</body>
+</html>

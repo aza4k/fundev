@@ -1,0 +1,142 @@
+{
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\manage.py": {
+    "mtime": 1780117157.081948,
+    "ast_hash": "d76dd95ade842f308860dbaaa311c06b",
+    "semantic_hash": "d76dd95ade842f308860dbaaa311c06b"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\.gemini\\settings.json": {
+    "mtime": 1780117384.2753286,
+    "ast_hash": "30f7caa61b7e1a0f487fc38ea20d7a11",
+    "semantic_hash": "30f7caa61b7e1a0f487fc38ea20d7a11"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\blog\\admin.py": {
+    "mtime": 1780119723.0060036,
+    "ast_hash": "cc113a485939cd7331b5aeb0c85ab494",
+    "semantic_hash": "cc113a485939cd7331b5aeb0c85ab494"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\blog\\apps.py": {
+    "mtime": 1780117171.9104638,
+    "ast_hash": "6ced856f087a6cd8607f4758a6c0e0cc",
+    "semantic_hash": "6ced856f087a6cd8607f4758a6c0e0cc"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\blog\\models.py": {
+    "mtime": 1780119711.271499,
+    "ast_hash": "d37e9b93b1fda9347195dcb2e14cfdfb",
+    "semantic_hash": "d37e9b93b1fda9347195dcb2e14cfdfb"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\blog\\tests.py": {
+    "mtime": 1780117171.9227643,
+    "ast_hash": "e08f0582500f6562bf0a931ef9503b39",
+    "semantic_hash": "e08f0582500f6562bf0a931ef9503b39"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\blog\\urls.py": {
+    "mtime": 1780119737.7129319,
+    "ast_hash": "a7072c33c21b4e187c0ab6cdc2ad4731",
+    "semantic_hash": "a7072c33c21b4e187c0ab6cdc2ad4731"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\blog\\views.py": {
+    "mtime": 1780119763.0895963,
+    "ast_hash": "4898b9074605d16904d24aeada77b488",
+    "semantic_hash": "4898b9074605d16904d24aeada77b488"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\blog\\__init__.py": {
+    "mtime": 1780117171.9289653,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\blog\\migrations\\0001_initial.py": {
+    "mtime": 1780119942.4331412,
+    "ast_hash": "a65fb5f74eebc3ff4429599791352e01",
+    "semantic_hash": "a65fb5f74eebc3ff4429599791352e01"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\blog\\migrations\\__init__.py": {
+    "mtime": 1780117171.9299662,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\static\\script.js": {
+    "mtime": 1780119912.364666,
+    "ast_hash": "bc4e410eb5879ada3a8c6aede4d07308",
+    "semantic_hash": "bc4e410eb5879ada3a8c6aede4d07308"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\studio\\asgi.py": {
+    "mtime": 1780117157.090799,
+    "ast_hash": "2be65521ac38f08a7681464c82f12fad",
+    "semantic_hash": "2be65521ac38f08a7681464c82f12fad"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\studio\\settings.py": {
+    "mtime": 1780119706.1506035,
+    "ast_hash": "2cb95f043a2ca524b8ba8fb3d8ecee5c",
+    "semantic_hash": "2cb95f043a2ca524b8ba8fb3d8ecee5c"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\studio\\urls.py": {
+    "mtime": 1780119734.375987,
+    "ast_hash": "56d39ddab1f574e07f7cddb0dde5d8f2",
+    "semantic_hash": "56d39ddab1f574e07f7cddb0dde5d8f2"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\studio\\wsgi.py": {
+    "mtime": 1780117157.1210082,
+    "ast_hash": "9c20344ea8f55a54d12cf3dad9b08753",
+    "semantic_hash": "9c20344ea8f55a54d12cf3dad9b08753"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\studio\\__init__.py": {
+    "mtime": 1780117157.1210082,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\GEMINI.md": {
+    "mtime": 1780119995.9430244,
+    "ast_hash": "25c141288702089e122c5d69a415d84e",
+    "semantic_hash": "25c141288702089e122c5d69a415d84e"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\templates\\blog_detail.html": {
+    "mtime": 1780119931.7731314,
+    "ast_hash": "6f3a918476074420f4d3763989878686",
+    "semantic_hash": "6f3a918476074420f4d3763989878686"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\templates\\index.html": {
+    "mtime": 1780119859.995971,
+    "ast_hash": "7146a096a32f63f041e089c0b03274fc",
+    "semantic_hash": "7146a096a32f63f041e089c0b03274fc"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\semyon_section.png": {
+    "mtime": 1780055144.113453,
+    "ast_hash": "6e2188f748e710b5ca3bed5dd67975b2",
+    "semantic_hash": "6e2188f748e710b5ca3bed5dd67975b2"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\static\\images\\Azamat.JPG": {
+    "mtime": 1778087508.3270485,
+    "ast_hash": "f6c942b4ffc5755f063e36d4dbec6e75",
+    "semantic_hash": "f6c942b4ffc5755f063e36d4dbec6e75"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\static\\images\\Azamat.webp": {
+    "mtime": 1780054732.8336158,
+    "ast_hash": "94edb0ba8c998b1eb5cb65d9a7f565bd",
+    "semantic_hash": "94edb0ba8c998b1eb5cb65d9a7f565bd"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\static\\images\\begzat.png": {
+    "mtime": 1780054271.1352522,
+    "ast_hash": "e92f90b3a5abbb9dcdbb733d75eba48c",
+    "semantic_hash": "e92f90b3a5abbb9dcdbb733d75eba48c"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\static\\images\\begzat.webp": {
+    "mtime": 1780054585.9653642,
+    "ast_hash": "056719eae9100f69350e388041ef9b96",
+    "semantic_hash": "056719eae9100f69350e388041ef9b96"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\static\\images\\Salamt.jpg": {
+    "mtime": 1778089772.0919118,
+    "ast_hash": "0c458a650ec4766204f3ccff369f05e2",
+    "semantic_hash": "0c458a650ec4766204f3ccff369f05e2"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\static\\images\\Salamt.webp": {
+    "mtime": 1780054204.638819,
+    "ast_hash": "7e566ed2141042fd07ec762f7baeb94f",
+    "semantic_hash": "7e566ed2141042fd07ec762f7baeb94f"
+  },
+  "C:\\Users\\AZA\\Documents\\ai\\fundev\\static\\images\\semyon.webp": {
+    "mtime": 1780054733.5200956,
+    "ast_hash": "3e0a858ed28c3c832bbc82413d989c36",
+    "semantic_hash": "3e0a858ed28c3c832bbc82413d989c36"
+  }
+}

@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Journal — fundev Software Development Studio | Engineering Insights</title>
+  <meta name="description" content="Explore insights, engineering deep-dives, and technical updates from the fundev team."/>
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Journal — fundev Engineering Insights"/>
+  <meta property="og:description" content="Read our latest engineering insights, project deep-dives, and tech updates."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://fundev.uz/blog/"/>
+  <meta property="og:image" content="{% static 'images/logo-og.png' %}"/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="{% static 'style.css' %}?v=3.0"/>
+  <style>
+    body { overflow-y: auto; cursor: auto !important; background: var(--black); }
+    .nav { position: sticky; top: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); z-index: 100; }
+    .all-posts-body { max-width: 1100px; margin: 120px auto 80px; padding: 0 24px; }
+    .page-header { margin-bottom: 64px; }
+    .page-title { font-size: clamp(3rem, 6vw, 5rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1; margin-bottom: 16px; color: var(--white); }
+    .page-title .accent { color: var(--accent); }
+    .page-sub { font-size: 1.1rem; color: var(--white-60); }
+    
+    .posts-list { display: flex; flex-direction: column; gap: 48px; }
+    .post-item { display: grid; grid-template-columns: 350px 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--border); transition: transform 0.3s; }
+    .post-item:hover { transform: translateX(10px); }
+    .post-item:last-child { border-bottom: none; }
+    
+    .pi-thumbnail { border-radius: 16px; overflow: hidden; aspect-ratio: 16 / 9; background: #0a0a0a; }
+    .pi-thumbnail img { width: 100%; height: 100%; object-fit: cover; }
+    
+    .pi-content { display: flex; flex-direction: column; justify-content: center; }
+    .pi-date { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 12px; }
+    .pi-title { font-size: 1.75rem; font-weight: 700; color: var(--white); margin-bottom: 16px; letter-spacing: -0.01em; }
+    .pi-excerpt { font-size: 1rem; color: var(--white-60); line-height: 1.6; margin-bottom: 24px; }
+    .pi-link { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 600; color: var(--white); text-decoration: none; transition: color 0.3s; }
+    .pi-link:hover { color: var(--accent); }
+    .pi-link svg { width: 18px; height: 18px; transition: transform 0.3s; }
+    .pi-link:hover svg { transform: translateX(4px); }
+
+    .back-link { display: inline-flex; align-items: center; gap: 10px; color: var(--white); text-decoration: none; font-weight: 600; margin-bottom: 32px; transition: color 0.3s; }
+    .back-link:hover { color: var(--accent); }
+    .back-link svg { width: 20px; height: 20px; transform: rotate(180deg); }
+    
+    .footer { position: relative; margin-top: 120px; left: 0; right: 0; padding: 40px 24px; border-top: 1px solid var(--border); }
+    
+    .pagination { display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 60px; font-family: var(--mono); }
+    .pagination a { color: var(--white); text-decoration: none; padding: 10px 20px; border: 1px solid var(--border); border-radius: 30px; transition: all 0.3s; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; }
+    .pagination a:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+    .pagination span { color: var(--white-60); font-size: 0.8rem; }
+    
+    @media (max-width: 900px) {
+      .post-item { grid-template-columns: 1fr; gap: 24px; }
+      .pi-thumbnail { width: 100%; }
+    }
+    
+    /* Overrides */
+    .section-dots, .nav-dot-track { display: none; }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+
+  <nav class="nav">
+    <a href="{% url 'index' %}" class="nav-logo">fundev</a>
+    <div class="nav-links">
+      <a href="{% url 'index' %}" class="nav-link">Back to Home</a>
+    </div>
+  </nav>
+
+  <main class="all-posts-body">
+    <a href="{% url 'index' %}" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+      <span>Back to home</span>
+    </a>
+
+    <header class="page-header">
+      <h1 class="page-title">The <span class="accent">Journal</span></h1>
+      <p class="page-sub">Insights, engineering deep-dives, and studio updates.</p>
+    </header>
+
+    <div class="posts-list">
+      {% for post in page_obj %}
+      <article class="post-item">
+        <div class="pi-thumbnail">
+          {% if post.thumbnail %}
+            <img src="{{ post.thumbnail.url }}" alt="{{ post.title }}" loading="lazy">
+          {% else %}
+            <div class="bc-placeholder" style="width:100%; height:100%; background: #0a0a0a;"></div>
+          {% endif %}
+        </div>
+        <div class="pi-content">
+          <span class="pi-date">{{ post.created_at|date:"F d, Y" }}</span>
+          <h2 class="pi-title">{{ post.title }}</h2>
+          <p class="pi-excerpt">{{ post.excerpt }}</p>
+          <a href="{% url 'post_detail' post.slug %}" class="pi-link">
+            <span>Read Article</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </article>
+      {% empty %}
+      <p class="blog-empty">No posts yet. Stay tuned!</p>
+      {% endfor %}
+    </div>
+
+    {% if page_obj.has_other_pages %}
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+        
+        <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+        
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Next</a>
+        {% endif %}
+    </div>
+    {% endif %}
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 fundev</span>
+    <span>Premium Software Engineering Team</span>
+  </footer>
+
+  <script>
+    (function() {
+      const cursor = document.getElementById('cursor');
+      let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+      let cx = mx, cy = my;
+      document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+      (function loop() {
+        cx += (mx - cx) * 0.18;
+        cy += (my - cy) * 0.18;
+        cursor.style.left = cx + 'px';
+        cursor.style.top = cy + 'px';
+        requestAnimationFrame(loop);
+      })();
+    })();
+  </script>
+</body>
+</html>

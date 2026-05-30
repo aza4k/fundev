@@ -1,0 +1,1542 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "manage.py",
+      "file_type": "code",
+      "source_file": "manage.py",
+      "source_location": "L1",
+      "community": 4,
+      "norm_label": "manage.py",
+      "id": "manage_py"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "manage.py",
+      "source_location": "L7",
+      "community": 4,
+      "norm_label": "main()",
+      "id": "fundev_manage_main"
+    },
+    {
+      "label": "Run administrative tasks.",
+      "file_type": "rationale",
+      "source_file": "manage.py",
+      "source_location": "L8",
+      "community": 4,
+      "norm_label": "run administrative tasks.",
+      "id": "fundev_manage_rationale_8"
+    },
+    {
+      "label": "script.js",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "script.js",
+      "id": "script_js"
+    },
+    {
+      "label": "cursor",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L5",
+      "community": 0,
+      "norm_label": "cursor",
+      "id": "fundev_script_cursor"
+    },
+    {
+      "label": "triggerStats()",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L27",
+      "community": 0,
+      "norm_label": "triggerstats()",
+      "id": "fundev_script_triggerstats"
+    },
+    {
+      "label": "track",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L46",
+      "community": 0,
+      "norm_label": "track",
+      "id": "fundev_script_track"
+    },
+    {
+      "label": "sections",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L47",
+      "community": 0,
+      "norm_label": "sections",
+      "id": "fundev_script_sections"
+    },
+    {
+      "label": "dots",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L48",
+      "community": 0,
+      "norm_label": "dots",
+      "id": "fundev_script_dots"
+    },
+    {
+      "label": "navIndicator",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L49",
+      "community": 0,
+      "norm_label": "navindicator",
+      "id": "fundev_script_navindicator"
+    },
+    {
+      "label": "nav",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L50",
+      "community": 0,
+      "norm_label": "nav",
+      "id": "fundev_script_nav"
+    },
+    {
+      "label": "goToSection()",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L56",
+      "community": 0,
+      "norm_label": "gotosection()",
+      "id": "fundev_script_gotosection"
+    },
+    {
+      "label": "timeNow",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L96",
+      "community": 0,
+      "norm_label": "timenow",
+      "id": "fundev_script_timenow"
+    },
+    {
+      "label": "initPlexus()",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L176",
+      "community": 0,
+      "norm_label": "initplexus()",
+      "id": "fundev_script_initplexus"
+    },
+    {
+      "label": "tabItems",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L308",
+      "community": 0,
+      "norm_label": "tabitems",
+      "id": "fundev_script_tabitems"
+    },
+    {
+      "label": "panels",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L309",
+      "community": 0,
+      "norm_label": "panels",
+      "id": "fundev_script_panels"
+    },
+    {
+      "label": "activateTab()",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L314",
+      "community": 0,
+      "norm_label": "activatetab()",
+      "id": "fundev_script_activatetab"
+    },
+    {
+      "label": "nextTab()",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L323",
+      "community": 0,
+      "norm_label": "nexttab()",
+      "id": "fundev_script_nexttab"
+    },
+    {
+      "label": "startCycle()",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L327",
+      "community": 0,
+      "norm_label": "startcycle()",
+      "id": "fundev_script_startcycle"
+    },
+    {
+      "label": "stopCycle()",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L334",
+      "community": 0,
+      "norm_label": "stopcycle()",
+      "id": "fundev_script_stopcycle"
+    },
+    {
+      "label": "navList",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L350",
+      "community": 0,
+      "norm_label": "navlist",
+      "id": "fundev_script_navlist"
+    },
+    {
+      "label": "settings.json",
+      "file_type": "code",
+      "source_file": ".gemini/settings.json",
+      "source_location": "L1",
+      "community": 6,
+      "norm_label": "settings.json",
+      "id": "gemini_settings_json"
+    },
+    {
+      "label": "hooks",
+      "file_type": "code",
+      "source_file": ".gemini/settings.json",
+      "source_location": "L2",
+      "community": 6,
+      "norm_label": "hooks",
+      "id": "gemini_settings_hooks"
+    },
+    {
+      "label": "BeforeTool",
+      "file_type": "code",
+      "source_file": ".gemini/settings.json",
+      "source_location": "L3",
+      "community": 6,
+      "norm_label": "beforetool",
+      "id": "gemini_settings_hooks_beforetool"
+    },
+    {
+      "label": "admin.py",
+      "file_type": "code",
+      "source_file": "blog/admin.py",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "admin.py",
+      "id": "blog_admin_py"
+    },
+    {
+      "label": "apps.py",
+      "file_type": "code",
+      "source_file": "blog/apps.py",
+      "source_location": "L1",
+      "community": 5,
+      "norm_label": "apps.py",
+      "id": "blog_apps_py"
+    },
+    {
+      "label": "BlogConfig",
+      "file_type": "code",
+      "source_file": "blog/apps.py",
+      "source_location": "L4",
+      "community": 5,
+      "norm_label": "blogconfig",
+      "id": "blog_apps_blogconfig"
+    },
+    {
+      "label": "AppConfig",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "community": 5,
+      "norm_label": "appconfig",
+      "id": "appconfig"
+    },
+    {
+      "label": "models.py",
+      "file_type": "code",
+      "source_file": "blog/models.py",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "models.py",
+      "id": "blog_models_py"
+    },
+    {
+      "label": "tests.py",
+      "file_type": "code",
+      "source_file": "blog/tests.py",
+      "source_location": "L1",
+      "community": 12,
+      "norm_label": "tests.py",
+      "id": "blog_tests_py"
+    },
+    {
+      "label": "views.py",
+      "file_type": "code",
+      "source_file": "blog/views.py",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "views.py",
+      "id": "blog_views_py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "blog/__init__.py",
+      "source_location": "L1",
+      "community": 13,
+      "norm_label": "__init__.py",
+      "id": "blog_init_py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "blog/migrations/__init__.py",
+      "source_location": "L1",
+      "community": 14,
+      "norm_label": "__init__.py",
+      "id": "blog_migrations_init_py"
+    },
+    {
+      "label": "asgi.py",
+      "file_type": "code",
+      "source_file": "studio/asgi.py",
+      "source_location": "L1",
+      "community": 8,
+      "norm_label": "asgi.py",
+      "id": "studio_asgi_py"
+    },
+    {
+      "label": "ASGI config for studio project.  It exposes the ASGI callable as a module-leve",
+      "file_type": "rationale",
+      "source_file": "studio/asgi.py",
+      "source_location": "L1",
+      "community": 8,
+      "norm_label": "asgi config for studio project.  it exposes the asgi callable as a module-leve",
+      "id": "studio_asgi_rationale_1"
+    },
+    {
+      "label": "settings.py",
+      "file_type": "code",
+      "source_file": "studio/settings.py",
+      "source_location": "L1",
+      "community": 9,
+      "norm_label": "settings.py",
+      "id": "studio_settings_py"
+    },
+    {
+      "label": "Django settings for studio project.  Generated by 'django-admin startproject'",
+      "file_type": "rationale",
+      "source_file": "studio/settings.py",
+      "source_location": "L1",
+      "community": 9,
+      "norm_label": "django settings for studio project.  generated by 'django-admin startproject'",
+      "id": "studio_settings_rationale_1"
+    },
+    {
+      "label": "urls.py",
+      "file_type": "code",
+      "source_file": "studio/urls.py",
+      "source_location": "L1",
+      "community": 10,
+      "norm_label": "urls.py",
+      "id": "studio_urls_py"
+    },
+    {
+      "label": "URL configuration for studio project.  The `urlpatterns` list routes URLs to v",
+      "file_type": "rationale",
+      "source_file": "studio/urls.py",
+      "source_location": "L1",
+      "community": 10,
+      "norm_label": "url configuration for studio project.  the `urlpatterns` list routes urls to v",
+      "id": "studio_urls_rationale_1"
+    },
+    {
+      "label": "wsgi.py",
+      "file_type": "code",
+      "source_file": "studio/wsgi.py",
+      "source_location": "L1",
+      "community": 11,
+      "norm_label": "wsgi.py",
+      "id": "studio_wsgi_py"
+    },
+    {
+      "label": "WSGI config for studio project.  It exposes the WSGI callable as a module-leve",
+      "file_type": "rationale",
+      "source_file": "studio/wsgi.py",
+      "source_location": "L1",
+      "community": 11,
+      "norm_label": "wsgi config for studio project.  it exposes the wsgi callable as a module-leve",
+      "id": "studio_wsgi_rationale_1"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "studio/__init__.py",
+      "source_location": "L1",
+      "community": 15,
+      "norm_label": "__init__.py",
+      "id": "studio_init_py"
+    },
+    {
+      "label": "Django Settings",
+      "file_type": "code",
+      "source_file": "studio/settings.py",
+      "community": 4,
+      "norm_label": "django settings",
+      "id": "studio_settings"
+    },
+    {
+      "label": "Studio Landing Page",
+      "file_type": "document",
+      "source_file": "index.html",
+      "community": 0,
+      "norm_label": "studio landing page",
+      "id": "index_html"
+    },
+    {
+      "label": "Project Instructions",
+      "file_type": "rationale",
+      "source_file": "GEMINI.md",
+      "rationale": "Mandates usage of graphify for codebase navigation and updates.",
+      "community": 16,
+      "norm_label": "project instructions",
+      "id": "gemini_md"
+    },
+    {
+      "label": "fundev",
+      "file_type": "image",
+      "source_file": "semyon_section.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 3,
+      "norm_label": "fundev",
+      "id": "semyon_section_fundev"
+    },
+    {
+      "label": "Semyon Shuchkin",
+      "file_type": "image",
+      "source_file": "semyon_section.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 3,
+      "norm_label": "semyon shuchkin",
+      "id": "semyon_section_semyon_shuchkin"
+    },
+    {
+      "label": "CEO & Tech Entrepreneur",
+      "file_type": "image",
+      "source_file": "semyon_section.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 3,
+      "norm_label": "ceo & tech entrepreneur",
+      "id": "semyon_section_ceo_tech_entrepreneur"
+    },
+    {
+      "label": "Python",
+      "file_type": "image",
+      "source_file": "semyon_section.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 3,
+      "norm_label": "python",
+      "id": "semyon_section_python"
+    },
+    {
+      "label": "Django",
+      "file_type": "image",
+      "source_file": "semyon_section.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 3,
+      "norm_label": "django",
+      "id": "semyon_section_django"
+    },
+    {
+      "label": "C++",
+      "file_type": "image",
+      "source_file": "semyon_section.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 3,
+      "norm_label": "c++",
+      "id": "semyon_section_cpp"
+    },
+    {
+      "label": "Arduino",
+      "file_type": "image",
+      "source_file": "semyon_section.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 3,
+      "norm_label": "arduino",
+      "id": "semyon_section_arduino"
+    },
+    {
+      "label": "PostgreSQL",
+      "file_type": "image",
+      "source_file": "semyon_section.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 3,
+      "norm_label": "postgresql",
+      "id": "semyon_section_postgresql"
+    },
+    {
+      "label": "Azamat Portrait",
+      "file_type": "image",
+      "source_file": "images/Azamat.JPG",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 17,
+      "norm_label": "azamat portrait",
+      "id": "azamat_portrait"
+    },
+    {
+      "label": "Azamat",
+      "file_type": "image",
+      "source_file": "images/Azamat.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 18,
+      "norm_label": "azamat",
+      "id": "azamat_azamat"
+    },
+    {
+      "label": "Begzat Karimbaev",
+      "file_type": "image",
+      "source_file": "images/begzat.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 19,
+      "norm_label": "begzat karimbaev",
+      "id": "begzat_begzatkarimbaev"
+    },
+    {
+      "label": "Begzat",
+      "file_type": "image",
+      "source_file": "images/begzat.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 20,
+      "norm_label": "begzat",
+      "id": "begzat_begzat"
+    },
+    {
+      "label": "Salamt",
+      "file_type": "image",
+      "source_file": "images/Salamt.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 21,
+      "norm_label": "salamt",
+      "id": "salamt_salamt"
+    },
+    {
+      "label": "Salamt",
+      "file_type": "image",
+      "source_file": "images/Salamt.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 22,
+      "norm_label": "salamt",
+      "id": "salamt_person"
+    },
+    {
+      "label": "Semyon",
+      "file_type": "image",
+      "source_file": "images/semyon.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 23,
+      "norm_label": "semyon",
+      "id": "semyon_person"
+    },
+    {
+      "label": "PostAdmin",
+      "file_type": "code",
+      "source_file": "blog/admin.py",
+      "source_location": "L5",
+      "community": 2,
+      "norm_label": "postadmin",
+      "id": "blog_admin_postadmin"
+    },
+    {
+      "label": "Post",
+      "file_type": "code",
+      "source_file": "blog/models.py",
+      "source_location": "L4",
+      "community": 2,
+      "norm_label": "post",
+      "id": "blog_models_post"
+    },
+    {
+      "label": "Meta",
+      "file_type": "code",
+      "source_file": "blog/models.py",
+      "source_location": "L15",
+      "community": 2,
+      "norm_label": "meta",
+      "id": "blog_models_meta"
+    },
+    {
+      "label": ".__str__()",
+      "file_type": "code",
+      "source_file": "blog/models.py",
+      "source_location": "L18",
+      "community": 2,
+      "norm_label": ".__str__()",
+      "id": "blog_models_post_str"
+    },
+    {
+      "label": ".save()",
+      "file_type": "code",
+      "source_file": "blog/models.py",
+      "source_location": "L21",
+      "community": 2,
+      "norm_label": ".save()",
+      "id": "blog_models_post_save"
+    },
+    {
+      "label": "urls.py",
+      "file_type": "code",
+      "source_file": "blog/urls.py",
+      "source_location": "L1",
+      "community": 24,
+      "norm_label": "urls.py",
+      "id": "blog_urls_py"
+    },
+    {
+      "label": "index()",
+      "file_type": "code",
+      "source_file": "blog/views.py",
+      "source_location": "L4",
+      "community": 2,
+      "norm_label": "index()",
+      "id": "blog_views_index"
+    },
+    {
+      "label": "post_detail()",
+      "file_type": "code",
+      "source_file": "blog/views.py",
+      "source_location": "L8",
+      "community": 2,
+      "norm_label": "post_detail()",
+      "id": "blog_views_post_detail"
+    },
+    {
+      "label": "0001_initial.py",
+      "file_type": "code",
+      "source_file": "blog/migrations/0001_initial.py",
+      "source_location": "L1",
+      "community": 7,
+      "norm_label": "0001_initial.py",
+      "id": "blog_migrations_0001_initial_py"
+    },
+    {
+      "label": "Migration",
+      "file_type": "code",
+      "source_file": "blog/migrations/0001_initial.py",
+      "source_location": "L6",
+      "community": 7,
+      "norm_label": "migration",
+      "id": "migrations_0001_initial_migration"
+    },
+    {
+      "label": "script.js",
+      "file_type": "code",
+      "source_file": "static/script.js",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "script.js",
+      "id": "static_script_js"
+    },
+    {
+      "label": "cursor",
+      "file_type": "code",
+      "source_file": "static/script.js",
+      "source_location": "L5",
+      "community": 1,
+      "norm_label": "cursor",
+      "id": "static_script_cursor"
+    },
+    {
+      "label": "triggerStats()",
+      "file_type": "code",
+      "source_file": "static/script.js",
+      "source_location": "L27",
+      "community": 1,
+      "norm_label": "triggerstats()",
+      "id": "static_script_triggerstats"
+    },
+    {
+      "label": "track",
+      "file_type": "code",
+      "source_file": "static/script.js",
+      "source_location": "L46",
+      "community": 1,
+      "norm_label": "track",
+      "id": "static_script_track"
+    },
+    {
+      "label": "sections",
+      "file_type": "code",
+      "source_file": "static/script.js",
+      "source_location": "L47",
+      "community": 1,
+      "norm_label": "sections",
+      "id": "static_script_sections"
+    },
+    {
+      "label": "dots",
+      "file_type": "code",
+      "source_file": "static/script.js",
+      "source_location": "L48",
+      "community": 1,
+      "norm_label": "dots",
+      "id": "static_script_dots"
+    },
+    {
+      "label": "navIndicator",
+      "file_type": "code",
+      "source_file": "static/script.js",
+      "source_location": "L49",
+      "community": 1,
+      "norm_label": "navindicator",
+      "id": "static_script_navindicator"
+    },
+    {
+      "label": "nav",
+      "file_type": "code",
+      "source_file": "static/script.js",
+      "source_location": "L50",
+      "community": 1,
+      "norm_label": "nav",
+      "id": "static_script_nav"
+    },
+    {
+      "label": "goToSection()",
+      "file_type": "code",
+      "source_file": "static/script.js",
+      "source_location": "L56",
+      "community": 1,
+      "norm_label": "gotosection()",
+      "id": "static_script_gotosection"
+    },
+    {
+      "label": "timeNow",
+      "file_type": "code",
+      "source_file": "static/script.js",
+      "source_location": "L96",
+      "community": 1,
+      "norm_label": "timenow",
+      "id": "static_script_timenow"
+    },
+    {
+      "label": "initPlexus()",
+      "file_type": "code",
+      "source_file": "static/script.js",
+      "source_location": "L176",
+      "community": 1,
+      "norm_label": "initplexus()",
+      "id": "static_script_initplexus"
+    },
+    {
+      "label": "tabItems",
+      "file_type": "code",
+      "source_file": "static/script.js",
+      "source_location": "L308",
+      "community": 1,
+      "norm_label": "tabitems",
+      "id": "static_script_tabitems"
+    },
+    {
+      "label": "panels",
+      "file_type": "code",
+      "source_file": "static/script.js",
+      "source_location": "L309",
+      "community": 1,
+      "norm_label": "panels",
+      "id": "static_script_panels"
+    },
+    {
+      "label": "activateTab()",
+      "file_type": "code",
+      "source_file": "static/script.js",
+      "source_location": "L314",
+      "community": 1,
+      "norm_label": "activatetab()",
+      "id": "static_script_activatetab"
+    },
+    {
+      "label": "nextTab()",
+      "file_type": "code",
+      "source_file": "static/script.js",
+      "source_location": "L323",
+      "community": 1,
+      "norm_label": "nexttab()",
+      "id": "static_script_nexttab"
+    },
+    {
+      "label": "startCycle()",
+      "file_type": "code",
+      "source_file": "static/script.js",
+      "source_location": "L327",
+      "community": 1,
+      "norm_label": "startcycle()",
+      "id": "static_script_startcycle"
+    },
+    {
+      "label": "stopCycle()",
+      "file_type": "code",
+      "source_file": "static/script.js",
+      "source_location": "L334",
+      "community": 1,
+      "norm_label": "stopcycle()",
+      "id": "static_script_stopcycle"
+    },
+    {
+      "label": "navList",
+      "file_type": "code",
+      "source_file": "static/script.js",
+      "source_location": "L350",
+      "community": 1,
+      "norm_label": "navlist",
+      "id": "static_script_navlist"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manage.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manage_py",
+      "target": "fundev_manage_main"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "manage.py",
+      "source": "manage_py",
+      "target": "studio_settings"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "manage.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "fundev_manage_main",
+      "target": "fundev_manage_rationale_8"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "script_js",
+      "target": "fundev_script_cursor"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "script_js",
+      "target": "fundev_script_triggerstats"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "script_js",
+      "target": "fundev_script_track"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "script_js",
+      "target": "fundev_script_sections"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "script_js",
+      "target": "fundev_script_dots"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "script_js",
+      "target": "fundev_script_navindicator"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "script_js",
+      "target": "fundev_script_nav"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "script_js",
+      "target": "fundev_script_gotosection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L132",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "script_js",
+      "target": "fundev_script_timenow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L176",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "script_js",
+      "target": "fundev_script_initplexus"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L308",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "script_js",
+      "target": "fundev_script_tabitems"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L309",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "script_js",
+      "target": "fundev_script_panels"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L314",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "script_js",
+      "target": "fundev_script_activatetab"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L323",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "script_js",
+      "target": "fundev_script_nexttab"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L327",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "script_js",
+      "target": "fundev_script_startcycle"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L334",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "script_js",
+      "target": "fundev_script_stopcycle"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L350",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "script_js",
+      "target": "fundev_script_navlist"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "script.js",
+      "source": "script_js",
+      "target": "index_html"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L324",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "fundev_script_activatetab",
+      "target": "fundev_script_nexttab"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L328",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "fundev_script_startcycle",
+      "target": "fundev_script_stopcycle"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".gemini/settings.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gemini_settings_json",
+      "target": "gemini_settings_hooks"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".gemini/settings.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gemini_settings_hooks",
+      "target": "gemini_settings_hooks_beforetool"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "blog/admin.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "blog_admin_py",
+      "target": "blog_models_py"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "blog/admin.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "blog_admin_py",
+      "target": "blog_admin_postadmin"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "blog/apps.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "blog_apps_py",
+      "target": "blog_apps_blogconfig"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "blog/apps.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "blog_apps_blogconfig",
+      "target": "appconfig"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "blog/models.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "blog_models_py",
+      "target": "blog_models_post"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "blog/models.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "blog_models_py",
+      "target": "blog_models_meta"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "blog/views.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "blog_models_py",
+      "target": "blog_views_py"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "blog/views.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "blog_views_py",
+      "target": "blog_views_index"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "blog/views.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "blog_views_py",
+      "target": "blog_views_post_detail"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/asgi.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "studio_asgi_py",
+      "target": "studio_asgi_rationale_1"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/settings.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "studio_settings_py",
+      "target": "studio_settings_rationale_1"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/urls.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "studio_urls_py",
+      "target": "studio_urls_rationale_1"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/wsgi.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "studio_wsgi_py",
+      "target": "studio_wsgi_rationale_1"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "semyon_section.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "semyon_section_fundev",
+      "target": "semyon_section_semyon_shuchkin"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "semyon_section.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "semyon_section_semyon_shuchkin",
+      "target": "semyon_section_ceo_tech_entrepreneur"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "semyon_section.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "semyon_section_semyon_shuchkin",
+      "target": "semyon_section_python"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "semyon_section.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "semyon_section_semyon_shuchkin",
+      "target": "semyon_section_django"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "semyon_section.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "semyon_section_semyon_shuchkin",
+      "target": "semyon_section_cpp"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "semyon_section.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "semyon_section_semyon_shuchkin",
+      "target": "semyon_section_arduino"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "semyon_section.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "semyon_section_semyon_shuchkin",
+      "target": "semyon_section_postgresql"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "blog/admin.py",
+      "source_location": "L2",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "blog_admin_postadmin",
+      "target": "blog_models_post"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "blog/models.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "blog_models_post",
+      "target": "blog_models_post_str"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "blog/models.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "blog_models_post",
+      "target": "blog_models_post_save"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "blog/migrations/0001_initial.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "blog_migrations_0001_initial_py",
+      "target": "migrations_0001_initial_migration"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/script.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_script_js",
+      "target": "static_script_cursor"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/script.js",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_script_js",
+      "target": "static_script_triggerstats"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/script.js",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_script_js",
+      "target": "static_script_track"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/script.js",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_script_js",
+      "target": "static_script_sections"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/script.js",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_script_js",
+      "target": "static_script_dots"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/script.js",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_script_js",
+      "target": "static_script_navindicator"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/script.js",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_script_js",
+      "target": "static_script_nav"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/script.js",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_script_js",
+      "target": "static_script_gotosection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/script.js",
+      "source_location": "L132",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_script_js",
+      "target": "static_script_timenow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/script.js",
+      "source_location": "L176",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_script_js",
+      "target": "static_script_initplexus"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/script.js",
+      "source_location": "L308",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_script_js",
+      "target": "static_script_tabitems"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/script.js",
+      "source_location": "L309",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_script_js",
+      "target": "static_script_panels"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/script.js",
+      "source_location": "L314",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_script_js",
+      "target": "static_script_activatetab"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/script.js",
+      "source_location": "L323",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_script_js",
+      "target": "static_script_nexttab"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/script.js",
+      "source_location": "L327",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_script_js",
+      "target": "static_script_startcycle"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/script.js",
+      "source_location": "L334",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_script_js",
+      "target": "static_script_stopcycle"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/script.js",
+      "source_location": "L350",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_script_js",
+      "target": "static_script_navlist"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/script.js",
+      "source_location": "L324",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_script_activatetab",
+      "target": "static_script_nexttab"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/script.js",
+      "source_location": "L328",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_script_startcycle",
+      "target": "static_script_stopcycle"
+    }
+  ],
+  "hyperedges": []
+}

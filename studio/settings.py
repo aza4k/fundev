@@ -16,6 +16,8 @@ DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'fundev.uz,www.fundev.uz,localhost,127.0.0.1,fundev-production-dd8e.up.railway.app').split(',')
 
+CSRF_TRUSTED_ORIGINS = os.environ.get('CSRF_TRUSTED_ORIGINS', 'https://fundev.uz,https://www.fundev.uz,https://fundev-production-dd8e.up.railway.app').split(',')
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',

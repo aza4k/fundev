@@ -101,7 +101,7 @@
         <div class="pi-content">
           <span class="pi-date">{{ post.created_at|date:"F d, Y" }}</span>
           <h2 class="pi-title">{{ post.title }}</h2>
-          <p class="pi-excerpt">{{ post.excerpt }}</p>
+          <p class="pi-excerpt">{{ post.excerpt|striptags }}</p>
           <a href="{% url 'post_detail' post.slug %}" class="pi-link">
             <span>Read Article</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">

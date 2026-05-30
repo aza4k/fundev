@@ -339,7 +339,7 @@
             <div class="bc-content">
               <span class="bc-date">{{ post.created_at|date:"M d, Y" }}</span>
               <h3 class="bc-title">{{ post.title }}</h3>
-              <p class="bc-excerpt">{{ post.excerpt }}</p>
+              <p class="bc-excerpt">{{ post.excerpt|striptags }}</p>
               <a href="{% url 'post_detail' post.slug %}" class="bc-link">
                 <span>Read More</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

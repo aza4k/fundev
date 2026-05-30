@@ -1,0 +1,394 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>fundev — Bespoke Software Development Studio | Custom Web & Mobile Apps</title>
+  <meta name="description" content="fundev is a premium software development studio specializing in high-performance web apps, native mobile platforms, and AI integrations."/>
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="fundev — Bespoke Software Development Studio"/>
+  <meta property="og:description" content="Premium software engineering studio building high-performance web apps and intelligent AI solutions."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://fundev.uz/"/>
+  <meta property="og:image" content="{% static 'images/logo-og.png' %}"/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="{% static 'style.css' %}?v=3.0"/>
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">fundev</div>
+    <div class="nav-links">
+      <a href="#s-hero" class="nav-link" data-section="0">Home</a>
+      <a href="#s-services" class="nav-link" data-section="1">Services</a>
+      <a href="#s-team" class="nav-link" data-section="2">Team</a>
+      <a href="#s-blog" class="nav-link" data-section="3">Blog</a>
+      <a href="#s-contact" class="nav-link" data-section="4">Contact</a>
+    </div>
+    <div class="nav-dot-track">
+      <div class="nav-dot-indicator" id="navIndicator"></div>
+    </div>
+  </nav>
+
+  <!-- Section dots -->
+  <div class="section-dots" id="sectionDots">
+    <button class="sdot active" data-index="0" aria-label="Home"></button>
+    <button class="sdot" data-index="1" aria-label="Services"></button>
+    <button class="sdot" data-index="2" aria-label="Team"></button>
+    <button class="sdot" data-index="3" aria-label="Blog"></button>
+    <button class="sdot" data-index="4" aria-label="Contact"></button>
+  </div>
+
+  <!-- Scroll container -->
+  <div class="scroll-container" id="scrollContainer">
+    <div class="scroll-track" id="scrollTrack">
+
+    <!-- 0. HERO -->
+    <section class="section s-hero" id="s-hero" data-index="0">
+      <canvas class="section-canvas" id="heroCanvas"></canvas>
+      <div class="section-bg-glow" style="--section-index: 0;">
+        <div class="bg-blob blob-hero-1"></div>
+        <div class="bg-blob blob-hero-2"></div>
+      </div>
+      <div class="hero-body">
+        <div class="hero-tag anim-child">Software Engineering Studio</div>
+        <h1 class="hero-name anim-child">fun<span class="accent">dev</span></h1>
+        <p class="hero-sub anim-child">We build bespoke web platforms, native mobile applications, and intelligent AI solutions for ambitious businesses.</p>
+        
+        <div class="hero-actions anim-child">
+          <a href="#s-contact" class="cta-button" data-scroll-to="4">
+            <span>Let's build together</span>
+            <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <div class="hero-scroll anim-child">
+          <span>scroll</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat anim-child"><strong data-count="4">0</strong><span>Experts</span></div>
+        <div class="hstat anim-child"><strong data-count="12">0</strong><span>Projects Shipped</span></div>
+        <div class="hstat anim-child"><strong data-count="3">0</strong><span>Years Active</span></div>
+      </div>
+    </section>
+
+    <!-- 1. SERVICES -->
+    <section class="section s-services" id="s-services" data-index="1">
+      <canvas class="section-canvas" id="servicesCanvas"></canvas>
+      <div class="section-bg-glow" style="--section-index: 1;">
+        <div class="bg-blob blob-services-1"></div>
+        <div class="bg-blob blob-services-2"></div>
+      </div>
+      <div class="services-interactive-body">
+        
+        <!-- Left Side: Interactive Large We Selectors -->
+        <div class="services-left-nav anim-child">
+          <div class="label">Our Expertise</div>
+          <div class="services-nav-list">
+            
+            <div class="services-nav-item active" data-target="design">
+              <span class="sn-num">01 //</span>
+              <h2 class="sn-title">WE DESIGN</h2>
+            </div>
+            
+            <div class="services-nav-item" data-target="build">
+              <span class="sn-num">02 //</span>
+              <h2 class="sn-title">WE BUILD</h2>
+            </div>
+            
+            <div class="services-nav-item" data-target="ship">
+              <span class="sn-num">03 //</span>
+              <h2 class="sn-title">WE SHIP</h2>
+            </div>
+
+          </div>
+          <p class="services-nav-note">Hover over our core workflows to explore our capabilities in detail.</p>
+        </div>
+
+        <!-- Right Side: Dynamic Content Display Panel -->
+        <div class="services-right-display anim-child">
+          <div class="services-display-wrapper">
+            
+            <!-- Panel 1: Design -->
+            <div class="services-panel active" data-panel="design">
+              <div class="sp-subheader">// VISUAL & BRAND IDENTITY TACTICS</div>
+              <h3 class="sp-title">High-End UI/UX & Branding</h3>
+              <p class="sp-desc">We craft beautiful design systems, premium logos, high-fidelity prototypes, and fluid interface architectures. Every screen is engineered to establish trust and drive absolute engagement.</p>
+              <div class="sp-tags">
+                <span>[Figma]</span>
+                <span>[UI/UX]</span>
+                <span>[Branding]</span>
+                <span>[Design Systems]</span>
+                <span>[Photoshop]</span>
+              </div>
+            </div>
+
+            <!-- Panel 2: Build -->
+            <div class="services-panel" data-panel="build">
+              <div class="sp-subheader">// PRODUCTION-GRADE CODE ARCHITECTURE</div>
+              <h3 class="sp-title">Web & Mobile Apps</h3>
+              <p class="sp-desc">Scalable, bespoke web applications and platforms constructed using secure **Django**, **Python**, and highly responsive **React.js** frontends. Responsive native **iOS & Android** mobile applications crafted for raw speed.</p>
+              <div class="sp-tags">
+                <span>[React.js]</span>
+                <span>[Django]</span>
+                <span>[Python]</span>
+                <span>[iOS]</span>
+                <span>[Android]</span>
+                <span>[Flutter]</span>
+              </div>
+            </div>
+
+            <!-- Panel 3: Ship -->
+            <div class="services-panel" data-panel="ship">
+              <div class="sp-subheader">// INTELLIGENT DEPLOYMENT & LOGIC</div>
+              <h3 class="sp-title">AI & Process Automations</h3>
+              <p class="sp-desc">Advanced pipelines featuring custom LLM (Large Language Model) integrations, automated workflows, intelligent agents, predictive model layers, and ultra-reliable third-party API configurations.</p>
+              <div class="sp-tags">
+                <span>[AI/ML]</span>
+                <span>[LLMs]</span>
+                <span>[Python]</span>
+                <span>[APIs]</span>
+                <span>[Cloud]</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. TEAM -->
+    <section class="section s-team" id="s-team" data-index="2">
+      <canvas class="section-canvas" id="teamCanvas"></canvas>
+      <div class="section-bg-glow" style="--section-index: 2;">
+        <div class="bg-blob blob-team-1"></div>
+        <div class="bg-blob blob-team-2"></div>
+      </div>
+      <div class="team-body">
+        <div class="team-header anim-child">
+          <div class="label">The People</div>
+          <h2 class="team-title">Meet our <span class="accent">crew</span></h2>
+        </div>
+
+        <div class="team-grid">
+          
+          <!-- Member 1 -->
+          <div class="member-card anim-child">
+            <span class="mc-index">01</span>
+            <div class="mc-photo-wrap">
+              <img src="{% static 'images/Azamat.webp' %}" alt="Azamat Duysenbaev" class="mc-photo" loading="lazy">
+            </div>
+            <div class="mc-overlay"></div>
+            <div class="mc-info">
+              <div class="mc-meta">
+                <h3 class="mc-name">Azamat Dúysenbaev</h3>
+                <p class="mc-role">Backend Developer & AI Engineer</p>
+              </div>
+              <div class="mc-detail">
+                <div class="mc-tech">
+                  <span>Python</span><span>Django</span><span>AI/ML</span>
+                </div>
+                <div class="mc-links">
+                  <a href="https://github.com/aza4k" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </a>
+                  <a href="https://t.me/thedurev" target="_blank" rel="noopener" aria-label="Telegram">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Member 2 -->
+          <div class="member-card anim-child">
+            <span class="mc-index">02</span>
+            <div class="mc-photo-wrap">
+              <img src="{% static 'images/semyon.webp' %}" alt="Semyon Shuchkin" class="mc-photo" loading="lazy">
+            </div>
+            <div class="mc-overlay"></div>
+            <div class="mc-info">
+              <div class="mc-meta">
+                <h3 class="mc-name">Semyon Shuchkin</h3>
+                <p class="mc-role">CEO & Tech Entrepreneur</p>
+              </div>
+              <div class="mc-detail">
+                <div class="mc-tech">
+                  <span>Business</span><span>Python</span><span>C++</span>
+                </div>
+                <div class="mc-links">
+                  <a href="https://github.com/SeedyROLL" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </a>
+                  <a href="https://t.me/Nihilist_13" target="_blank" rel="noopener" aria-label="Telegram">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Member 3 -->
+          <div class="member-card anim-child">
+            <span class="mc-index">03</span>
+            <div class="mc-photo-wrap">
+              <img src="{% static 'images/Salamt.webp' %}" alt="Salamat Perdebaev" class="mc-photo" loading="lazy">
+            </div>
+            <div class="mc-overlay"></div>
+            <div class="mc-info">
+              <div class="mc-meta">
+                <h3 class="mc-name">Salamat Perdebaev</h3>
+                <p class="mc-role">Graphic Designer</p>
+              </div>
+              <div class="mc-detail">
+                <div class="mc-tech">
+                  <span>Figma</span><span>Branding</span><span>UI/UX</span>
+                </div>
+                <div class="mc-links">
+                  <a href="https://t.me/Perdebaev_design" target="_blank" rel="noopener" aria-label="Telegram">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                  </a>
+                  <a href="https://www.behance.net/perdebevs" target="_blank" rel="noopener" aria-label="Behance">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.938 4.503c.702 0 1.34.06 1.92.188.577.13 1.07.33 1.485.61.41.28.733.65.96 1.12.225.47.34 1.05.34 1.73 0 .74-.17 1.36-.507 1.86-.338.5-.837.9-1.502 1.22.906.26 1.576.72 2.022 1.37.448.66.672 1.45.672 2.36 0 .75-.15 1.42-.44 2-.296.58-.7 1.06-1.22 1.44-.52.38-1.12.66-1.81.83-.69.18-1.41.26-2.16.26H0v-15h6.938zm-.36 6.06c.6 0 1.1-.16 1.48-.48.39-.32.58-.79.58-1.39 0-.34-.07-.63-.2-.87-.13-.24-.32-.43-.55-.57-.23-.14-.5-.24-.8-.29a4.6 4.6 0 00-.94-.09H3.19v3.7h3.39zm.18 6.38c.36 0 .7-.04 1.01-.13.31-.09.58-.22.82-.4.23-.17.42-.39.55-.67.13-.28.2-.61.2-1s-.08-.71-.24-.99c-.16-.28-.37-.5-.64-.67-.27-.16-.58-.28-.93-.35a5.16 5.16 0 00-1.09-.1H3.19v4.31h3.5zm10.3-3.19c.26.48.7.72 1.32.72.42 0 .78-.12 1.06-.34.28-.22.46-.47.53-.74h2.35c-.38 1.2-.95 2.05-1.7 2.56-.75.5-1.66.76-2.72.76-.75 0-1.43-.13-2.03-.38-.6-.26-1.12-.62-1.54-1.08-.42-.47-.74-1.02-.97-1.65-.23-.63-.35-1.32-.35-2.07 0-.73.12-1.41.35-2.03.24-.62.57-1.16 1-1.63.42-.46.93-.83 1.53-1.08.6-.26 1.27-.39 2-.39.82 0 1.54.15 2.14.46.6.31 1.1.73 1.49 1.26.4.53.68 1.14.86 1.83.17.69.24 1.42.2 2.19h-7.08c-.02.69.17 1.34.49 1.81zm2.34-4.66c-.2-.42-.6-.7-1.17-.7-.36 0-.66.08-.89.23-.23.15-.42.34-.55.56-.13.22-.22.46-.28.71a3.97 3.97 0 00-.1.66h4.05c-.05-.53-.19-1.04-.46-1.46h-.6zM15.6 4.86h4.97v1.4H15.6V4.86z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Member 4 -->
+          <div class="member-card anim-child">
+            <span class="mc-index">04</span>
+            <div class="mc-photo-wrap">
+              <img src="{% static 'images/begzat.webp' %}" alt="Begzat Karimbaev" class="mc-photo" loading="lazy">
+            </div>
+            <div class="mc-overlay"></div>
+            <div class="mc-info">
+              <div class="mc-meta">
+                <h3 class="mc-name">Begzat Karimbaev</h3>
+                <p class="mc-role">Backend Developer & Python Engineer</p>
+              </div>
+              <div class="mc-detail">
+                <div class="mc-tech">
+                  <span>Python</span><span>Django</span><span>PostgreSQL</span>
+                </div>
+                <div class="mc-links">
+                  <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </a>
+                  <a href="https://t.me" target="_blank" rel="noopener" aria-label="Telegram">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. BLOG [NEW] -->
+    <section class="section s-blog" id="s-blog" data-index="3">
+      <canvas class="section-canvas" id="blogCanvas"></canvas>
+      <div class="section-bg-glow" style="--section-index: 3;">
+        <div class="bg-blob blob-blog-1"></div>
+        <div class="bg-blob blob-blog-2"></div>
+      </div>
+      <div class="blog-body">
+        <div class="blog-header anim-child">
+          <div class="blog-header-text">
+            <div class="label">Our Journal</div>
+            <h2 class="blog-title">Latest <span class="accent">insights</span></h2>
+          </div>
+          <a href="{% url 'all_posts' %}" class="blog-view-all">
+            <span>View All Posts</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <div class="blog-grid">
+          {% for post in posts %}
+          <div class="blog-card anim-child">
+            <span class="bc-index">{{ forloop.counter|stringformat:"02d" }}</span>
+            <div class="bc-thumbnail">
+              {% if post.thumbnail %}
+                <img src="{{ post.thumbnail.url }}" alt="{{ post.title }}" loading="lazy">
+              {% else %}
+                <div class="bc-placeholder"></div>
+              {% endif %}
+            </div>
+            <div class="bc-content">
+              <span class="bc-date">{{ post.created_at|date:"M d, Y" }}</span>
+              <h3 class="bc-title">{{ post.title }}</h3>
+              <p class="bc-excerpt">{{ post.excerpt }}</p>
+              <a href="{% url 'post_detail' post.slug %}" class="bc-link">
+                <span>Read More</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+          {% empty %}
+          <p class="blog-empty anim-child">No posts yet. Stay tuned!</p>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CONTACT -->
+    <section class="section s-contact" id="s-contact" data-index="4">
+      <canvas class="section-canvas" id="contactCanvas"></canvas>
+      <div class="section-bg-glow" style="--section-index: 4;">
+        <div class="bg-blob blob-contact-1"></div>
+        <div class="bg-blob blob-contact-2"></div>
+      </div>
+      <div class="contact-body">
+        <div class="label anim-child">Get in touch</div>
+        <h2 class="contact-heading anim-child">Have an idea?<br/>Let's build it together.</h2>
+        
+        <div class="contact-options anim-child">
+          <a href="tel:+998913911801" class="contact-link phone">
+            <span>Call us directly</span>
+            <strong>+998 91 391 18 01</strong>
+          </a>
+          <a href="https://t.me/fundevuz" target="_blank" rel="noopener" class="contact-link tg">
+            <span>Message on Telegram</span>
+            <strong>@fundevuz</strong>
+          </a>
+        </div>
+        
+        <p class="contact-note anim-child">Reach out today — we offer free consultations, product strategy audits, and transparent scope estimations.</p>
+      </div>
+      <footer class="footer">
+        <span>© 2026 fundev</span>
+        <span>Premium Software Engineering Team</span>
+      </footer>
+    </section>
+
+    </div><!-- /scroll-track -->
+  </div><!-- /scroll-container -->
+
+  <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

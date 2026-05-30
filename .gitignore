@@ -22,3 +22,6 @@ static/assets/
 .idea/
 .DS_Store
 Thumbs.db
+
+.gemini/
+graphify-out/

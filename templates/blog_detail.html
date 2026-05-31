@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>{{ post.title }} — fundev Journal</title>
-  <meta name="description" content="{{ post.excerpt }}"/>
+  <title>{% if post.seo_title %}{{ post.seo_title }}{% else %}{{ post.title }} — fundev Journal{% endif %}</title>
+  <meta name="description" content="{% if post.meta_description %}{{ post.meta_description }}{% else %}{{ post.excerpt }}{% endif %}"/>
   
   <!-- Open Graph -->
-  <meta property="og:title" content="{{ post.title }} — fundev Journal"/>
-  <meta property="og:description" content="{{ post.excerpt }}"/>
+  <meta property="og:title" content="{% if post.seo_title %}{{ post.seo_title }}{% else %}{{ post.title }} — fundev Journal{% endif %}"/>
+  <meta property="og:description" content="{% if post.meta_description %}{{ post.meta_description }}{% else %}{{ post.excerpt }}{% endif %}"/>
   <meta property="og:type" content="article"/>
   <meta property="og:url" content="{{ request.build_absolute_uri }}"/>
   {% if post.thumbnail %}

@@ -364,8 +364,8 @@
               <span class="bc-date">{{ post.created_at|date:"M d, Y" }}</span>
               <h3 class="bc-title">{{ post.title }}</h3>
               <p class="bc-excerpt">{{ post.excerpt|striptags }}</p>
-              <a href="{% url 'post_detail' post.slug %}" class="bc-link">
-                <span>Read More</span>
+              <a href="{% url 'post_detail' post.slug %}" class="bc-link" aria-label="Read more about {{ post.title }}">
+                <span>Read Full Story</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>

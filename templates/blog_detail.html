@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>{% if post.seo_title %}{{ post.seo_title }}{% else %}{{ post.title }} — fundev Journal{% endif %}</title>
+  <title>{% if post.seo_title %}{{ post.seo_title }}{% else %}{{ post.title }} — fundev Karakalpakstan{% endif %}</title>
   <meta name="description" content="{% if post.meta_description %}{{ post.meta_description }}{% else %}{{ post.excerpt }}{% endif %}"/>
   <link rel="canonical" href="https://fundev.uz/blog/{{ post.slug }}/"/>
   
@@ -18,10 +18,11 @@
   {% else %}
   <meta property="og:image" content="{% static 'images/logo-og.png' %}"/>
   {% endif %}
+  <link rel="icon" type="image/png" href="{% static 'images/logo-og.png' %}"/>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
   <link rel="stylesheet" href="{% static 'style.css' %}?v=3.0"/>
   <style>
     body { overflow-y: auto; cursor: auto !important; }

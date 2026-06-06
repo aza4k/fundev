@@ -143,18 +143,26 @@ body.cursor-hover .cursor {
   gap: 10px;
 }
 .sdot {
-  width: 5px; height: 5px;
+  width: 12px; height: 12px;
   border-radius: 50%;
   background: var(--white-30);
   border: none;
   cursor: pointer;
   transition: all 0.35s var(--ease), background-color 0.5s var(--ease);
   padding: 0;
+  position: relative;
+}
+.sdot::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px; height: 44px;
 }
 .sdot.active {
   background: var(--white);
-  height: 22px;
-  border-radius: 3px;
+  height: 32px;
+  border-radius: 6px;
 }
 .sdot:hover { background: var(--white-60); }
 
@@ -884,14 +892,14 @@ body.cursor-hover .cursor {
 /* Social icon links */
 .mc-links {
   display: flex;
-  gap: 10px;
+  gap: 16px;
 }
 .mc-links a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1523,7 +1531,7 @@ body.cursor-hover .cursor {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 32px;
+    gap: 48px; /* Increased gap */
   }
   .nav-mobile-overlay.open {
     display: flex;

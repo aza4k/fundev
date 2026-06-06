@@ -104,8 +104,8 @@
           <span class="pi-date">{{ post.created_at|date:"F d, Y" }}</span>
           <h2 class="pi-title">{{ post.title }}</h2>
           <p class="pi-excerpt">{{ post.excerpt|striptags }}</p>
-          <a href="{% url 'post_detail' post.slug %}" class="pi-link">
-            <span>Read Article</span>
+          <a href="{% url 'post_detail' post.slug %}" class="pi-link" aria-label="Read full article: {{ post.title }}">
+            <span>Read Full Article</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>

@@ -31,13 +31,18 @@ function triggerStats() {
   els.forEach(el => {
     const target = parseInt(el.dataset.count);
     const suffix = target >= 10 ? '+' : '';
-    let val = 0;
-    const inc = target / 50;
-    const timer = setInterval(() => {
-      val = Math.min(val + inc, target);
+    const duration = 1500;
+    const startTime = performance.now();
+
+    function update(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = progress * (2 - progress);
+      const val = eased * target;
       el.textContent = Math.floor(val) + (val >= target ? suffix : '');
-      if (val >= target) clearInterval(timer);
-    }, 30);
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
   });
 }
 
@@ -173,15 +178,21 @@ function triggerStats() {
 })();
 
 // ===== PLEXUS CONSTELLATION NETWORK =====
-// IT Park style: dot grid + floating connected particles + mouse interaction
 function initPlexus(canvas, baseHue, maxParticles, isLight = false) {
   if (!canvas) return;
-  const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext('2d', { alpha: false }); // Optimization: no alpha for background
   maxParticles = maxParticles || 80;
   let W = 0, H = 0;
   let nodes = [];
   let mouseX = -9999, mouseY = -9999;
-  let phase = Math.random() * 6283; // random start phase
+  let phase = Math.random() * 6283;
+  let isVisible = false;
+  let gridCache = null;
+
+  const observer = new IntersectionObserver((entries) => {
+    isVisible = entries[0].isIntersecting;
+  }, { threshold: 0.01 });
+  observer.observe(canvas);
 
   function setSize() {
     const rect = canvas.parentElement.getBoundingClientRect();
@@ -191,7 +202,25 @@ function initPlexus(canvas, baseHue, maxParticles, isLight = false) {
       W = canvas.width = window.innerWidth;
       H = canvas.height = window.innerHeight;
     }
+    gridCache = createGridCache();
     seedNodes();
+  }
+
+  function createGridCache() {
+    const gc = document.createElement('canvas');
+    gc.width = W;
+    gc.height = H;
+    const gctx = gc.getContext('2d');
+    const gridSpacing = 60;
+    gctx.fillStyle = isLight ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.08)';
+    for (let gx = gridSpacing / 2; gx < W; gx += gridSpacing) {
+      for (let gy = gridSpacing / 2; gy < H; gy += gridSpacing) {
+        gctx.beginPath();
+        gctx.arc(gx, gy, 0.8, 0, Math.PI * 2);
+        gctx.fill();
+      }
+    }
+    return gc;
   }
 
   function seedNodes() {
@@ -210,81 +239,73 @@ function initPlexus(canvas, baseHue, maxParticles, isLight = false) {
   }
 
   function render() {
-    if (W === 0 || H === 0) { requestAnimationFrame(render); return; }
-    ctx.clearRect(0, 0, W, H);
+    if (!isVisible) {
+      requestAnimationFrame(render);
+      return;
+    }
+    
+    // Background color based on theme
+    ctx.fillStyle = isLight ? '#f8f8f8' : '#050505'; 
+    ctx.fillRect(0, 0, W, H);
+
+    if (gridCache) ctx.drawImage(gridCache, 0, 0);
+
     phase += 0.004;
 
-    // Living hue oscillation ±30 degrees
-    const hue = ((baseHue + Math.sin(phase) * 30) % 360 + 360) % 360;
-
-    // --- Layer 1: Static dot grid (like IT Park) ---
-    const gridSpacing = 60;
-    for (let gx = gridSpacing / 2; gx < W; gx += gridSpacing) {
-      for (let gy = gridSpacing / 2; gy < H; gy += gridSpacing) {
-        ctx.beginPath();
-        ctx.arc(gx, gy, 0.8, 0, Math.PI * 2);
-        ctx.fillStyle = isLight ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.08)';
-        ctx.fill();
-      }
-    }
-
-    // --- Layer 2: Radial glow at center ---
+    // --- Layer 2: Radial glow ---
     const grd = ctx.createRadialGradient(W * 0.5, H * 0.5, 0, W * 0.5, H * 0.5, Math.max(W, H) * 0.55);
     grd.addColorStop(0, isLight ? 'rgba(0,0,0,0.02)' : 'rgba(255,255,255,0.05)');
-    grd.addColorStop(1, 'rgba(255,255,255,0)');
+    grd.addColorStop(1, isLight ? 'rgba(248,248,248,0)' : 'rgba(5,5,5,0)');
     ctx.fillStyle = grd;
     ctx.fillRect(0, 0, W, H);
 
-    // --- Layer 3: Moving particles + connecting lines ---
+    // --- Layer 3: Moving particles ---
     const n = nodes.length;
     const linkDist = 160;
     const mouseDist = 220;
 
+    ctx.lineWidth = 1;
+
     for (let i = 0; i < n; i++) {
       const a = nodes[i];
-      // Move
       a.x += a.vx;
       a.y += a.vy;
-      // Bounce
       if (a.x < 0 || a.x > W) a.vx *= -1;
       if (a.y < 0 || a.y > H) a.vy *= -1;
       a.x = Math.max(0, Math.min(W, a.x));
       a.y = Math.max(0, Math.min(H, a.y));
 
-      // Draw node dot
       ctx.beginPath();
       ctx.arc(a.x, a.y, a.radius, 0, Math.PI * 2);
       ctx.fillStyle = isLight ? 'rgba(0,0,0,0.25)' : 'rgba(255,255,255,0.45)';
       ctx.fill();
 
-      // Connect to nearby nodes
       for (let j = i + 1; j < n; j++) {
         const b = nodes[j];
         const dx = a.x - b.x;
         const dy = a.y - b.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < linkDist) {
+        const distSq = dx * dx + dy * dy; // Avoid sqrt where possible
+        if (distSq < linkDist * linkDist) {
+          const dist = Math.sqrt(distSq);
           const opacity = (1 - dist / linkDist) * 0.35;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
           ctx.strokeStyle = isLight ? `rgba(0,0,0,${opacity * 0.4})` : `rgba(255,255,255,${opacity})`;
-          ctx.lineWidth = 1;
           ctx.stroke();
         }
       }
 
-      // Connect to mouse cursor
       const mdx = a.x - mouseX;
       const mdy = a.y - mouseY;
-      const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
-      if (mDist < mouseDist) {
+      const mDistSq = mdx * mdx + mdy * mdy;
+      if (mDistSq < mouseDist * mouseDist) {
+        const mDist = Math.sqrt(mDistSq);
         const opacity = (1 - mDist / mouseDist) * 0.55;
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
         ctx.lineTo(mouseX, mouseY);
         ctx.strokeStyle = isLight ? `rgba(0,0,0,${opacity * 0.5})` : `rgba(255,255,255,${opacity})`;
-        ctx.lineWidth = 1.2;
         ctx.stroke();
       }
     }
@@ -292,14 +313,24 @@ function initPlexus(canvas, baseHue, maxParticles, isLight = false) {
     requestAnimationFrame(render);
   }
 
-  // Track mouse globally (works with transform-based scroll)
+  // Throttle mousemove for canvas
+  let lastMouseMove = 0;
   document.addEventListener('mousemove', e => {
+    const now = performance.now();
+    if (now - lastMouseMove < 16) return;
+    lastMouseMove = now;
+    
+    if (!isVisible) return;
     const rect = canvas.getBoundingClientRect();
     mouseX = e.clientX - rect.left;
     mouseY = e.clientY - rect.top;
   });
 
-  window.addEventListener('resize', setSize);
+  window.addEventListener('resize', () => {
+    clearTimeout(window.resizeTimer);
+    window.resizeTimer = setTimeout(setSize, 200);
+  });
+  
   setSize();
   render();
 }
@@ -363,6 +394,7 @@ function initPlexus(canvas, baseHue, maxParticles, isLight = false) {
 
 // ===== BOOT ALL CANVASES =====
 (function() {
+  if (window.innerWidth <= 1024) return;
   initPlexus(document.getElementById('heroCanvas'), 240, 80, false);
   initPlexus(document.getElementById('servicesCanvas'), 265, 70, true);
   initPlexus(document.getElementById('teamCanvas'), 250, 75, false);

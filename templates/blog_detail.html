@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>{% if post.seo_title %}{{ post.seo_title }}{% else %}{{ post.title }} — fundev Journal{% endif %}</title>
   <meta name="description" content="{% if post.meta_description %}{{ post.meta_description }}{% else %}{{ post.excerpt }}{% endif %}"/>
+  <link rel="canonical" href="https://fundev.uz/blog/{{ post.slug }}/"/>
   
   <!-- Open Graph -->
   <meta property="og:title" content="{% if post.seo_title %}{{ post.seo_title }}{% else %}{{ post.title }} — fundev Journal{% endif %}"/>
@@ -85,7 +86,7 @@
 
   <footer class="footer">
     <span>© 2026 fundev</span>
-    <span>Premium Software Engineering Team</span>
+    <span>Premium IT Company & Software Engineering Team</span>
   </footer>
 
   <script>

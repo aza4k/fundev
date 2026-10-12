@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -14,9 +15,15 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-g8l4gq*=b9)q7g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'fundev.uz,www.fundev.uz,localhost,127.0.0.1,fundev-production-dd8e.up.railway.app').split(',')
+ALLOWED_HOSTS = os.environ.get(
+    'ALLOWED_HOSTS',
+    'fundev.uz,www.fundev.uz,localhost,127.0.0.1,.railway.app,.up.railway.app'
+).split(',')
 
-CSRF_TRUSTED_ORIGINS = os.environ.get('CSRF_TRUSTED_ORIGINS', 'https://fundev.uz,https://www.fundev.uz,https://fundev-production-dd8e.up.railway.app').split(',')
+CSRF_TRUSTED_ORIGINS = os.environ.get(
+    'CSRF_TRUSTED_ORIGINS',
+    'https://fundev.uz,https://www.fundev.uz,https://*.railway.app,https://*.up.railway.app'
+).split(',')
 
 # Application definition
 INSTALLED_APPS = [
@@ -63,17 +70,51 @@ TEMPLATES = [
 WSGI_APPLICATION = 'studio.wsgi.application'
 
 # Database
-# Use Railway variables or fall back to local
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('PGDATABASE', 'railway'),
-        'USER': os.environ.get('PGUSER', 'postgres'),
-        'PASSWORD': os.environ.get('PGPASSWORD', ''),
-        'HOST': os.environ.get('PGHOST', 'localhost'),
-        'PORT': os.environ.get('PGPORT', '5432'),
+# Priority 1: DATABASE_URL, DATABASE_PUBLIC_URL, DATABASE_PRIVATE_URL, or POSTGRES_URL
+_db_url = (
+    os.environ.get('DATABASE_URL')
+    or os.environ.get('DATABASE_PUBLIC_URL')
+    or os.environ.get('DATABASE_PRIVATE_URL')
+    or os.environ.get('POSTGRES_URL')
+    or os.environ.get('POSTGRESQL_URL')
+)
+
+_pg_db = (
+    os.environ.get('PGDATABASE')
+    or os.environ.get('POSTGRES_DB')
+    or os.environ.get('POSTGRES_DATABASE')
+)
+_pg_host = (
+    os.environ.get('PGHOST')
+    or os.environ.get('POSTGRES_HOST')
+)
+
+if _db_url:
+    DATABASES = {
+        'default': dj_database_url.parse(_db_url, conn_max_age=600)
     }
-}
+    if not DATABASES['default'].get('NAME'):
+        DATABASES['default']['NAME'] = 'railway'
+elif _pg_host or _pg_db:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': _pg_db or 'railway',
+            'USER': os.environ.get('PGUSER') or os.environ.get('POSTGRES_USER') or 'postgres',
+            'PASSWORD': os.environ.get('PGPASSWORD') or os.environ.get('POSTGRES_PASSWORD') or '',
+            'HOST': _pg_host or 'localhost',
+            'PORT': os.environ.get('PGPORT') or os.environ.get('POSTGRES_PORT') or '5432',
+            'CONN_MAX_AGE': 600,
+        }
+    }
+else:
+    # Local development fallback — SQLite
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [

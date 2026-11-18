@@ -15,15 +15,15 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-g8l4gq*=b9)q7g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = os.environ.get(
+ALLOWED_HOSTS = [h.strip() for h in os.environ.get(
     'ALLOWED_HOSTS',
-    'fundev.uz,www.fundev.uz,localhost,127.0.0.1,.railway.app,.up.railway.app'
-).split(',')
+    'fundev.uz,www.fundev.uz,localhost,127.0.0.1'
+).split(',') if h.strip()]
 
-CSRF_TRUSTED_ORIGINS = os.environ.get(
+CSRF_TRUSTED_ORIGINS = [o.strip() for o in os.environ.get(
     'CSRF_TRUSTED_ORIGINS',
-    'https://fundev.uz,https://www.fundev.uz,https://*.railway.app,https://*.up.railway.app'
-).split(',')
+    'https://fundev.uz,https://www.fundev.uz'
+).split(',') if o.strip()]
 
 # Application definition
 INSTALLED_APPS = [
@@ -70,45 +70,28 @@ TEMPLATES = [
 WSGI_APPLICATION = 'studio.wsgi.application'
 
 # Database
-# Priority 1: DATABASE_URL, DATABASE_PUBLIC_URL, DATABASE_PRIVATE_URL, or POSTGRES_URL
-_db_url = (
-    os.environ.get('DATABASE_URL')
-    or os.environ.get('DATABASE_PUBLIC_URL')
-    or os.environ.get('DATABASE_PRIVATE_URL')
-    or os.environ.get('POSTGRES_URL')
-    or os.environ.get('POSTGRESQL_URL')
-)
-
-_pg_db = (
-    os.environ.get('PGDATABASE')
-    or os.environ.get('POSTGRES_DB')
-    or os.environ.get('POSTGRES_DATABASE')
-)
-_pg_host = (
-    os.environ.get('PGHOST')
-    or os.environ.get('POSTGRES_HOST')
-)
+# Supports DATABASE_URL or individual DB_* variables, with SQLite as fallback
+_db_url = os.environ.get('DATABASE_URL')
+_db_name = os.environ.get('DB_NAME')
 
 if _db_url:
     DATABASES = {
         'default': dj_database_url.parse(_db_url, conn_max_age=600)
     }
-    if not DATABASES['default'].get('NAME'):
-        DATABASES['default']['NAME'] = 'railway'
-elif _pg_host or _pg_db:
+elif _db_name:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': _pg_db or 'railway',
-            'USER': os.environ.get('PGUSER') or os.environ.get('POSTGRES_USER') or 'postgres',
-            'PASSWORD': os.environ.get('PGPASSWORD') or os.environ.get('POSTGRES_PASSWORD') or '',
-            'HOST': _pg_host or 'localhost',
-            'PORT': os.environ.get('PGPORT') or os.environ.get('POSTGRES_PORT') or '5432',
+            'ENGINE': os.environ.get('DB_ENGINE', 'django.db.backends.postgresql'),
+            'NAME': _db_name,
+            'USER': os.environ.get('DB_USER', 'postgres'),
+            'PASSWORD': os.environ.get('DB_PASSWORD', ''),
+            'HOST': os.environ.get('DB_HOST', 'localhost'),
+            'PORT': os.environ.get('DB_PORT', '5432'),
             'CONN_MAX_AGE': 600,
         }
     }
 else:
-    # Local development fallback — SQLite
+    # Default fallback — SQLite (for local development and lightweight setups)
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -130,25 +113,26 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files
-STATIC_URL = 'static/'
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
+# Media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = Path(os.environ.get('MEDIA_ROOT', BASE_DIR / 'media'))
+
 # Production Security Settings
 if not DEBUG:
-    SECURE_SSL_REDIRECT = True
+    SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT', 'True').lower() in ('true', '1', 't')
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_SECONDS = int(os.environ.get('SECURE_HSTS_SECONDS', '31536000'))
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
     X_FRAME_OPTIONS = 'DENY'
-
-MEDIA_ROOT = os.environ.get('MEDIA_ROOT', BASE_DIR / 'media')
-MEDIA_URL = 'media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

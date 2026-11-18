@@ -1,0 +1,22 @@
+[Unit]
+Description=Gunicorn daemon for fundev.uz Django site
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/fundev
+ExecStart=/var/www/fundev/venv/bin/gunicorn \
+    --access-logfile /var/log/gunicorn/fundev_access.log \
+    --error-logfile /var/log/gunicorn/fundev_error.log \
+    --workers 3 \
+    --bind unix:/run/fundev.sock \
+    studio.wsgi:application
+Restart=always
+RestartSec=5
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

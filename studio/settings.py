@@ -15,15 +15,17 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-g8l4gq*=b9)q7g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = [h.strip() for h in os.environ.get(
+_raw_hosts = os.environ.get(
     'ALLOWED_HOSTS',
     'fundev.uz,www.fundev.uz,localhost,127.0.0.1'
-).split(',') if h.strip()]
+)
+ALLOWED_HOSTS = list({h.strip().strip("'\"") for h in _raw_hosts.split(',') if h.strip()} | {'localhost', '127.0.0.1', 'fundev.uz', 'www.fundev.uz'})
 
-CSRF_TRUSTED_ORIGINS = [o.strip() for o in os.environ.get(
+_raw_csrf = os.environ.get(
     'CSRF_TRUSTED_ORIGINS',
     'https://fundev.uz,https://www.fundev.uz'
-).split(',') if o.strip()]
+)
+CSRF_TRUSTED_ORIGINS = list({o.strip().strip("'\"") for o in _raw_csrf.split(',') if o.strip()} | {'https://fundev.uz', 'https://www.fundev.uz'})
 
 # Application definition
 INSTALLED_APPS = [
